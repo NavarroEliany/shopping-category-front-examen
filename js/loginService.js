@@ -24,7 +24,9 @@ function login(email, password){
             alertType = 'success'
             message = 'Inicio de sesion exitoso'
             alertBuilder(alertType, message)
-            localStorage.setItem('token', "asdasdadasd12345")
+            response.json().then((data) =>{
+                localStorage.setItem('token', data.token)
+            })
             setTimeout(() =>{
                 location.href = 'admin/dashboard.html'
             }, 3000)//tiempo de espera para entrar a la pagina 
